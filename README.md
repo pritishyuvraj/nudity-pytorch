@@ -7,8 +7,9 @@ Welcome to the repository of our PyTorch model designed to detect nudity in imag
 Our model has demonstrated high accuracy in its predictions. Here are some key performance metrics:
 ```
 Confusion Matrix:
- [[3155   46]
- [  22 3030]]
+ [[3186    9]
+ [  40 2969]]
+Test Accuracy: *0.9921*
 ```
 ```
 Number of Positive Samples: 3076
