@@ -3,13 +3,18 @@ Nudity detection ML model in PyTorch
 
 # Nudity detection ML model in PyTorch
 Welcome to the repository of our PyTorch model designed to detect nudity in images. This model is built on the philosophy that a simpler model with more data is always better than a larger model with less data.
+# Model Details
+ResNet (Residual Network) is a deep neural network architecture introduced by Microsoft Research in 2015. It was primarily developed for image classification tasks and has since become a widely used and highly successful model in computer vision. The original paper titled "Deep Residual Learning for Image Recognition" is available at https://arxiv.org/abs/1512.03385. </br></br>
+![Residual Network Architecture](https://media.geeksforgeeks.org/wp-content/uploads/20200424011138/ResNet.PNG)
+The key innovation of ResNet is the introduction of residual connections, which allow the network to train deeper than previous architectures without suffering from vanishing gradient problems. These residual connections skip one or more layers in the network and add the output of those skipped layers to the input of the subsequent layers, creating a form of identity mapping that eases the training process.</br></br>
+This involves utilizing a pre-trained model and subsequently freezing the layers while adding an additional layer specifically designed for fine-tuning. In doing so, I have generated two distinct published models: one fine-tuned on a relatively smaller dataset (```./trained_pytorch_model/resnet_finetuned_smaller_dataset.pth```) and another trained on a more extensive dataset (WIP).
 # Model Performance
 Our model has demonstrated high accuracy in its predictions. Here are some key performance metrics:
 ```
 Confusion Matrix:
  [[3186    9]
  [  40 2969]]
-Test Accuracy: *0.9921*
+Test Accuracy: 0.9921
 ```
 ```
 Number of Positive Samples: 3076
