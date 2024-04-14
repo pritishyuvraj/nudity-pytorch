@@ -84,6 +84,3 @@ scrapped_test_dataset = test_pos + test_neg
 random.shuffle(scrapped_test_dataset)
 test_dataset = AdultContentDataset(scrapped_training_dataset, transform=transform)
 test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=True)
-
-final_test_dataset = AdultContentDataset(final_test, transform=transform)
-final_test_dataloader = DataLoader(final_test_dataset, batch_size=1, shuffle=False)
