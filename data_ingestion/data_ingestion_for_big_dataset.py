@@ -24,8 +24,8 @@ class RawDataset:
         negative_label = set_location + "/safe/"
         # training_positive_label = os.listdir(positive_label)
         # training_negative_label = os.listdir(negative_label)
-        training_positive_label = [file for file in os.listdir(positive_label) if file.endswith('.jpg') or file.endswith('.jpeg') or file.endswith('.png')]
-        training_negative_label = [file for file in os.listdir(negative_label) if file.endswith('.jpg') or file.endswith('.jpeg') or file.endswith('.png')]
+        training_positive_label = [file for file in os.listdir(positive_label) if (file.endswith('.jpg') or file.endswith('.jpeg') or file.endswith('.png')) and 'facebook' not in file]
+        training_negative_label = [file for file in os.listdir(negative_label) if (file.endswith('.jpg') or file.endswith('.jpeg') or file.endswith('.png')) and 'facebook' not in file]
         training_positive_dataset = []
         training_negative_dataset = []
         for i in range(1, len(training_positive_label)):
@@ -84,3 +84,5 @@ scrapped_test_dataset = test_pos + test_neg
 random.shuffle(scrapped_test_dataset)
 test_dataset = AdultContentDataset(scrapped_training_dataset, transform=transform)
 test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=True)
+
+# image_path = '/Users/pyuvraj/Downloads/nudity_datasets/nude_sexy_safe_v1_x320/training/safe/facebook_8166.jpg'
