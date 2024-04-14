@@ -14,18 +14,20 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 class RawDataset:
     def __init__(self, root="/CCPP/nudity-pytorch/data/P2datasetFull/"):
-        self.train_set = "/Users/pyuvraj/Downloads/Nudity dataset/P2datasetFull/train"
-        self.test_set = "/Users/pyuvraj/Downloads/Nudity dataset/P2datasetFull/test1"
-        self.val_set = "/Users/pyuvraj/Downloads/Nudity dataset/P2datasetFull/val1"
-        self.final_results = "/Users/pyuvraj/Downloads/Nudity dataset/imageframes"
+        self.train_set = "/Users/pyuvraj/Downloads/nudity_datasets/P2datasetFull/train"
+        self.test_set = "/Users/pyuvraj/Downloads/nudity_datasets/P2datasetFull/test1"
+        self.val_set = "/Users/pyuvraj/Downloads/nudity_datasets/P2datasetFull/val1"
+        self.final_results = "/Users/pyuvraj/Downloads/nudity_datasets/imageframes"
 
     def prepareTrainingSet(
         self, set_location="/home/pyuvraj/CCPP/nudity-pytorch/data/P2datasetFull/train"
     ):
         positive_label = set_location + "/2/"
         negative_label = set_location + "/1/"
-        training_positive_label = os.listdir(positive_label)
-        training_negative_label = os.listdir(negative_label)
+        # training_positive_label = os.listdir(positive_label)
+        # training_negative_label = os.listdir(negative_label)
+        training_positive_label = [file for file in os.listdir(positive_label) if file.endswith('.jpg')]
+        training_negative_label = [file for file in os.listdir(negative_label) if file.endswith('.jpg')]
         training_positive_dataset = []
         training_negative_dataset = []
         for i in range(1, len(training_positive_label)):
