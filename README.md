@@ -1,8 +1,9 @@
 # nudity-pytorch
-Nudity detection ML model in PyTorch 
+1. Nudity detection ML model in PyTorch
+2. Mobile Nudity Detection ML Model in PyTorch iOS.
 
 # Nudity detection ML model in PyTorch
-Welcome to the repository of our PyTorch model designed to detect nudity in images. This model is built on the philosophy that a simpler model with more data is always better than a larger model with less data.
+Welcome to the repository of our PyTorch model designed to detect nudity in images. This model is built on the philosophy that a simpler model with more data is always better than a larger model with less data. We present to you two differnt models including one for iOS devices. 
 # Model Details
 ResNet (Residual Network) is a deep neural network architecture introduced by Microsoft Research in 2015. It was primarily developed for image classification tasks and has since become a widely used and highly successful model in computer vision. The original paper titled "Deep Residual Learning for Image Recognition" is available at https://arxiv.org/abs/1512.03385. </br></br>
 ![Residual Network Architecture](https://media.geeksforgeeks.org/wp-content/uploads/20200424011138/ResNet.PNG)
@@ -35,6 +36,30 @@ inference_model = torch.load('./trained_pytorch_model/inference_nudity_model.pth
 inference_model.eval()
 model_prediction = inference_model(input)
 ```
+### Run the Mobile iOS device
+Use the following command to run the model:
+```
+mobile_inference_model = torch.load('./trained_pytorch_model/mobile_version_resnet_finetuned_smaller_dataset.pth)
+mobile_inference_model.eval()
+model_prediction = mobile_inference_model(input)
+```
+## Sample Outputs from the model
+![alt text](https://github.com/pritishyuvraj/nudity-pytorch/blob/main/Sample%20-%20Outputs/sample_1.png?raw=true)
+#### Model Prediction -> Contains Nudity
+<hr/>
+
+![alt text](https://github.com/pritishyuvraj/nudity-pytorch/blob/main/Sample%20-%20Outputs/sample_2.png?raw=true)
+#### Model Prediction ->  Image is Safe
+<hr/>
+
+![alt text](https://github.com/pritishyuvraj/nudity-pytorch/blob/main/Sample%20-%20Outputs/sample_3.png?raw=true)
+#### Model Prediction -> Contains Nudity
+<hr/>
+
+
+![alt text](https://github.com/pritishyuvraj/nudity-pytorch/blob/main/Sample%20-%20Outputs/sample_4.png?raw=true)
+#### Model Prediction -> Contains Nudity
+<hr/>
 
 ## Contributing
 We welcome contributions to improve this model. Feel free to submit issues, fork the repository and send pull requests!
